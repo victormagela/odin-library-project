@@ -78,6 +78,10 @@ h1, h2, h3 {
     --medium: 2rem;
     --small: 1rem;
     --extra-small: 0.7rem;
+
+    /*Shadows*/
+    --section-shadow: 0 8px 20px oklch(1 0 0 / 0.25);
+    --card-shadow: 0 10px 30px oklch(0.3 0.02 260 / 0.2);
 }
 
 /*========== CSS Styling ==========*/
@@ -88,6 +92,7 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: 1fr 3fr 1fr;
+    gap: 20px;
 }
 
 header {
@@ -96,6 +101,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: var(--section-shadow);
 }
 
 header h1 {
