@@ -76,8 +76,30 @@
     
     <div class="modal-container" id="modal-container">
         <div class="modal-window" id="modal-window">
-            Modal for new book form
-            <button class="save-btn" id="close">Save Book</button>
+            <form class="book-form" id="book-form">
+                <div class="form-fields">
+                    <label class="label" for="title">Title</label>
+                    <input type="text" name="title" id="title">
+
+                    <label class="label" for="author">Author</label>
+                    <input type="text" name="author" id="author">
+                    
+                    <label  class="label"for="pages">Number of Pages</label>
+                    <input type="number" name="pages" id="pages">
+                    
+                    <fieldset>
+                        <legend class="label">Has Read?</legend>
+    
+                        <input type="radio" name="has-read" value="yes" id="yes">
+                        <label class="label" for="yes">Yes</label>
+    
+                        <input type="radio" name="has-read" value="no" id="no" checked>
+                        <label class="label" for="no">No</label>
+                    </fieldset>
+                </div>
+
+                <button class="save-btn" id="close" type="submit">Save Book</button>
+            </form>
         </div>
     </div>
 </body>

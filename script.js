@@ -6,7 +6,14 @@ const Book = function(title, author, pages, hasRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.hasRead = !hasRead ? "not read yet" : "already read";
+    switch (hasRead) {
+        case "yes":
+            this.hasRead = true;
+            break;
+        default:
+            this.hasRead = false;
+            break;
+    }
 
     this.info = function() {
         return `${this.title} by ${this.author}, ${this.pages} pages, ${this.hasRead}`
@@ -15,7 +22,7 @@ const Book = function(title, author, pages, hasRead) {
 
 const modal = document.getElementById("modal-container");
 const opnBtn = document.getElementById("open");
-const closeBtn = document.getElementById("close");
+const form = document.getElementById("book-form");
 
 opnBtn.addEventListener("click", () => {
     modal.classList.add("show");
@@ -26,7 +33,19 @@ opnBtn.addEventListener("click", () => {
         }
     });
 
-    closeBtn.addEventListener("click", () => {
+    form.addEventListener("submit", (e) => {
+        const data = new FormData(form);
+
+        let title = data.get("title");
+        let author = data.get("author");
+        let pages = data.get("pages");
+        let hasRead = data.get("has-read");
+
+        const newBook = new Book(title, author, pages, hasRead);
+
+        console.log(newBook.info());
+        e.preventDefault();
+        
         modal.classList.remove("show");
     });
 });

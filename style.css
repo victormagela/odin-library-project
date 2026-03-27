@@ -167,7 +167,7 @@ main {
     box-shadow: var(--card-shadow-enhanced);
 }
 
-.book-card .label {
+.label {
     font-weight: bold;
 }
 
@@ -210,14 +210,19 @@ footer {
 
   background-color: var(--surfaces-color);
   color: var(--text-on-light-bg);
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
 
   padding: 20px;
   border-radius: 8px;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.book-form .label {
+  font-size: var(--extra-small);
 }
 
 .save-btn {
