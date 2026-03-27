@@ -70,7 +70,8 @@ h1, h2, h3 {
     --surfaces-color: #F5E6D3;
     --primary-color: #C0603D;
     --accents-color: #A14E30;
-    --primary-text: #FAF8F3;
+    --text-on-dark-bg: #FAF8F3;
+    --text-on-light-bg: #1C1C1C;
 
     /*Font Sizes*/
     --large: 3rem;
@@ -83,8 +84,20 @@ h1, h2, h3 {
 
 body {
     background-color: var(--background-color);
-    color: var(--primary-text);
+    color: var(--text-on-dark-bg);
     min-height: 100vh;
     display: grid;
     grid-template-rows: 1fr 3fr 1fr;
+}
+
+header {
+    background-color: var(--surfaces-color);
+    color: var(--text-on-light-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: var(--large);
 }
