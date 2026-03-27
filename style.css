@@ -94,7 +94,7 @@ body {
     color: var(--text-on-dark-bg);
     min-height: 100vh;
     display: grid;
-    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 100px;
     gap: 20px;
 }
 
@@ -168,4 +168,13 @@ main {
 
 .book-card .label {
     font-weight: bold;
+}
+
+footer {
+    background-color: var(--surfaces-color);
+    color: var(--text-on-light-bg);
+    font-size: var(--small);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
