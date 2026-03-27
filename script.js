@@ -13,6 +13,14 @@ const Book = function(title, author, pages, hasRead) {
     }
 }
 
-const Hobbit = new Book("The Hobbit", "J.R.R. Tolkien", 250, false);
+const modal = document.getElementById("modal-container");
+const opnBtn = document.getElementById("open");
+const closeBtn = document.getElementById("close");
 
-console.log(Hobbit.info());
+opnBtn.addEventListener("click", () => {
+    modal.classList.remove("hidden");
+
+    closeBtn.addEventListener("click", () => {
+        modal.classList.add("hidden");
+    })
+});
