@@ -72,6 +72,7 @@ h1, h2, h3 {
     --accents-color: #A14E30;
     --text-on-dark-bg: #FAF8F3;
     --text-on-light-bg: #1C1C1C;
+    --semi-transparent-bg: rgba(0, 0, 0, 0.5);
 
     /*Font Sizes*/
     --large: 3rem;
@@ -185,12 +186,56 @@ footer {
   left: 0;
   height: 100vh;
   width: 100vw;
+
+  opacity: 0;
+  pointer-events: none;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
+  background-color: var(--semi-transparent-bg);
+
+  transition: opacity 300ms ease;
 }
 
-.hidden {
-  display: none;
+.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal-window {
+  width: 300px;
+
+  background-color: var(--surfaces-color);
+  color: var(--text-on-light-bg);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.save-btn {
+  background-color: var(--primary-color);
+  color: var(--text-on-dark-bg);
+  
+  font-size: var(--small);
+  font-weight: bold;
+  
+  border: none;
+  border-radius: 10px;
+
+  padding: 4px 6px;
+
+  cursor: pointer;
+}
+
+.save-btn:hover,
+.save-btn:active {
+  background-color: var(--accents-color);
 }

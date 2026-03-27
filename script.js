@@ -18,9 +18,15 @@ const opnBtn = document.getElementById("open");
 const closeBtn = document.getElementById("close");
 
 opnBtn.addEventListener("click", () => {
-    modal.classList.remove("hidden");
+    modal.classList.add("show");
+
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.classList.remove("show");
+        }
+    });
 
     closeBtn.addEventListener("click", () => {
-        modal.classList.add("hidden");
-    })
+        modal.classList.remove("show");
+    });
 });
