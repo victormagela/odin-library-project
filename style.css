@@ -76,12 +76,15 @@ h1, h2, h3 {
     /*Font Sizes*/
     --large: 3rem;
     --medium: 2rem;
-    --small: 1rem;
-    --extra-small: 0.7rem;
+    --small: 1.2rem;
+    --extra-small: 0.8rem;
 
     /*Shadows*/
-    --section-shadow: 0 8px 20px oklch(1 0 0 / 0.25);
-    --card-shadow: 0 10px 30px oklch(0.3 0.02 260 / 0.2);
+    --section-shadow: 0 8px 20px oklch(0.8 0 0 / 0.25);
+    --card-shadow: 0 10px 30px oklch(0.7 0.02 260 / 0.2);
+    --card-shadow-enhanced: 
+        0 10px 30px oklch(0.7 0.02 260 / 0.2),
+        0 15px 50px oklch(0.8 0.04 260 / 0.2)
 }
 
 /*========== CSS Styling ==========*/
@@ -106,4 +109,63 @@ header {
 
 header h1 {
     font-size: var(--large);
+}
+
+main {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.add-btn {
+    background-color: var(--primary-color);
+    color: var(--text-on-dark-bg);
+    font-size: var(--medium);
+    font-weight: bold;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.add-btn:hover,
+.add-btn:active {
+    background-color: var(--accents-color);
+}
+
+.add-btn:active {
+    box-shadow: var(--card-shadow);
+}
+
+.cards-container {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    align-items: start;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.book-card {
+    background-color: var(--surfaces-color);
+    color: var(--text-on-light-bg);
+    font-size: var(--small);
+    padding: 12px 20px;
+    border-left: 6px solid var(--accents-color);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-enhanced);
+}
+
+.book-card .label {
+    font-weight: bold;
 }
