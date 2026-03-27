@@ -78,3 +78,13 @@ h1, h2, h3 {
     --small: 1rem;
     --extra-small: 0.7rem;
 }
+
+/*========== CSS Styling ==========*/
+
+body {
+    background-color: var(--background-color);
+    color: var(--primary-text);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+}
