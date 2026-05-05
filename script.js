@@ -1,23 +1,25 @@
-const Book = function(title, author, pages, hasRead) {
-    if (!new.target) {
-        throw Error("You must use the new operator to call the constructor!");
-    }
+class Book {
+    constructor(title, author, pages, hasRead) {
+        if (!new.target) {
+            throw Error("You must use the new operator to call the constructor!");
+        }
 
-    this.id = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    switch (hasRead) {
-        case "yes":
-            this.hasRead = true;
-            break;
-        default:
-            this.hasRead = false;
-            break;
-    }
+        this.id = crypto.randomUUID();
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        switch (hasRead) {
+            case "yes":
+                this.hasRead = true;
+                break;
+            default:
+                this.hasRead = false;
+                break;
+        }
 
-    this.info = function() {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.hasRead}, id: ${this.id}`;
+        this.info = function () {
+            return `${this.title} by ${this.author}, ${this.pages} pages, ${this.hasRead}, id: ${this.id}`;
+        };
     }
 }
 
